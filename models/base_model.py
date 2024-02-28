@@ -2,6 +2,7 @@
 import uuid
 from datetime import datetime
 
+
 class BaseModel:
 
     def __init__(self, *args, **kwargs):
@@ -9,9 +10,9 @@ class BaseModel:
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
-
     def __str__(self) -> str:
-        return("[{}] ({}) <{}>".format(self.__class__.__name__, self.id, self.__dict__))
+        return ("[{}] ({}) <{}>"
+                .format(self.__class__.__name__, self.id, self.__dict__))
 
     def save(self):
         self.updated_at = datetime.now()
@@ -19,8 +20,10 @@ class BaseModel:
     def to_dict(self):
         temp_dict = self.__dict__.copy()
         temp_dict["__class__"] = self.__class__.__name__
-        temp_dict["created_at"] = self.created_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
-        temp_dict["updated_at"] = self.updated_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
+        temp_dict["created_at"] = self.created_at.strftime("\
+                                        %Y-%m-%dT%H:%M:%S.%f")
+        temp_dict["updated_at"] = self.updated_at.strftime("\
+                                        %Y-%m-%dT%H:%M:%S.%f")
         return temp_dict
 
 
