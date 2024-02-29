@@ -8,7 +8,7 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """ Innitializing the class. """
-        if not kwargs:
+        if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     time_format = "%Y-%m-%dT%H:%M:%S.%f"
