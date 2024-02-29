@@ -3,6 +3,7 @@
 from uuid import uuid4
 from datetime import datetime
 
+
 class BaseModel:
     """ BaseModel class """
 
@@ -18,7 +19,6 @@ class BaseModel:
         self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
-
 
     def __str__(self):
         """ Adds to the str. """
