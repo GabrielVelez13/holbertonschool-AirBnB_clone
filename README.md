@@ -6,5 +6,5 @@
 
 ### Properties
 This project is entails the following:
-- A _command interpreter__ to manipulate data without a visual interface, like in a Shell (perfect for development and debugging)
+- A _command interpreter__ to manipulate data without a visual interface, like in a Shell
 - A _database_ or _files_ that store data (data = objects)
