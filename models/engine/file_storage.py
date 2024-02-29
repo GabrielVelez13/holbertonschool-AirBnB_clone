@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+""" FileStorage class """
+import json
+from models.base_model import BaseModel
+import datetime
+import os
+
 
 class FileStorage:
     __file_path = "file.json"
