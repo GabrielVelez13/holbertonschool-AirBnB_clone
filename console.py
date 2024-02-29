@@ -1,8 +1,11 @@
 #!/usr/bin/python3
+"""Defining HBNBCommand class"""
 import cmd
 
 
 class HBNBCommand(cmd.Cmd):
+    """Console for Airbnb clone."""
+
     prompt = "(hbnb) "
 
     def do_help(self, arg: str):
