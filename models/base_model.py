@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Defining the basemodel of airbnb clone"""
 import uuid
 from datetime import datetime
 
