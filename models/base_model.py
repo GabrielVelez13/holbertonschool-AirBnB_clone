@@ -8,11 +8,14 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """ Innitializing the class. """
+        for key, value in kwargs.items():
+            self.__dict__[key] = value
         self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
-    def __str__(self) -> str:
+
+    def __str__(self):
         """ Adds to the str. """
         return ("[{}] ({}) {}"
                 .format(self.__class__.__name__, self.id, self.__dict__))
