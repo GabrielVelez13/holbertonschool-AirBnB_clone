@@ -8,8 +8,13 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """ Innitializing the class. """
-        for key, value in kwargs.items():
-            self.__dict__[key] = value
+        if not kwargs:
+            for key, value in kwargs.items():
+                if key == "created_at" or key == "updated_at":
+                    time_format = "%Y-%m-%dT%H:%M:%S.%f"
+                    self.__dict__[key] = datetime.strptime(value, time_format)
+                else:
+                    self.__dict__[key] = value
         self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
