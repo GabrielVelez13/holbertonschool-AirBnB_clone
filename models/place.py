@@ -30,3 +30,25 @@ class Place(BaseModel):
     latitude = 0.0
     longitude = 0.0
     amenity_ids = []
+
+    def __init__(self, *args, **kwargs):
+        """Init"""
+        super().__init__(*args, **kwargs)
+        models.storage.new(self)
+
+    def __str__(self):
+        """Str"""
+        return "[Place] ({}) {}".format(self.id, self.__dict__)
+
+    def save(self):
+        """Save"""
+        self.updated_at = datetime.now()
+        models.storage.save()
+
+    def to_dict(self):
+        """To dict"""
+        new_dict = self.__dict__.copy()
+        new_dict["__class__"] = self.__class__.__name__
+        new_dict["created_at"] = self.created_at.isoformat()
+        new_dict["updated_at"] = self.updated_at.isoformat()
+        return new_dict

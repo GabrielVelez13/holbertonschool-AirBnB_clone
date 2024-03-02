@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Defining the basemodel of airbnb clone"""
+import models
 from uuid import uuid4
 from datetime import datetime
 
@@ -28,6 +29,7 @@ class BaseModel:
     def save(self):
         """ Saves the data. """
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """ Sets extra keys in the dictionary. """
