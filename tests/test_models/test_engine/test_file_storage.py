@@ -25,7 +25,6 @@ class TestFileStorage(unittest.TestCase):
         fs1.new(bm1)
         self.assertEqual(fs1.all(), {f'BaseModel.{bm1.id}': bm1})
 
-
     def test_save(self):
         """Test save"""
         fs1 = FileStorage()

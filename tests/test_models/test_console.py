@@ -17,5 +17,6 @@ class TestHBNBCommand(unittest.TestCase):
         """Test instantiation of HBNBCommand"""
         self.assertIsInstance(self.cmd, HBNBCommand)
 
+
 if __name__ == '__main__':
     unittest.main()
