@@ -12,7 +12,6 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
-
 def parse(arg):
     curly_braces = re.search(r"\{(.*?)\}", arg)
     brackets = re.search(r"\[(.*?)\]", arg)
@@ -47,6 +46,9 @@ class HBNBCommand(cmd.Cmd):
         "Amenity",
         "Review"
     }
+    def __new__(cls) -> Self:
+
+        return super().__new__()
 
     def emptyline(self):
         """Do nothing upon receiving an empty line."""
